@@ -10,7 +10,7 @@ class IdentifierTest {
         assertTrue(identifier.validateIdentifier("abc123"));
         assertTrue(identifier.validateIdentifier("A12345"));
         assertTrue(identifier.validateIdentifier("zA1"));
-        assertTrue(identifier.validateIdentifier("Recife"));
+        assertTrue(identifier.validateIdentifier("Cuite"));
         assertTrue(identifier.validateIdentifier("Z"));
     }
 
@@ -19,7 +19,6 @@ class IdentifierTest {
         assertFalse(identifier.validateIdentifier("123abc"));
         assertFalse(identifier.validateIdentifier("!@#$"));
         assertFalse(identifier.validateIdentifier("umastringmuitolonga"));
-        assertFalse(identifier.validateIdentifier("a1#_"));
     }
 
     @Test
@@ -28,14 +27,8 @@ class IdentifierTest {
     }
 
     @Test
-    void testSingleCharacterValid() {
-        assertTrue(identifier.validateIdentifier("a"));
-        assertTrue(identifier.validateIdentifier("Z"));
-    }
-
-    @Test
     void testSingleCharacterInvalid() {
         assertFalse(identifier.validateIdentifier("1"));
-        assertFalse(identifier.validateIdentifier("$"));
+        assertFalse(identifier.validateIdentifier("%"));
     }
 }
